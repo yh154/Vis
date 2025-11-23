@@ -19,7 +19,7 @@ A web-based tool for visualizing DESeq2 differential gene expression results as 
 ## Required Input File Format
 
 Your DESeq2 output file must contain the following columns:
-- `padj` or `padj` (adjusted p-value)
+- `padj` (adjusted p-value)
 - `log2FoldChange` or `log2FC` or `log2(foldchange)` (log2 fold change)
 - `gene_name` or `geneName` or `gene` (gene identifier)
 
