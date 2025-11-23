@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESeq2 Volcano Plot Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DESeq2 Volcano Plot Generator</h1>
+            <p class="subtitle">Visualize differential gene expression results</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <div class="upload-section">
+                    <label for="fileInput" class="file-label">
+                        <span class="file-icon">📁</span>
+                        <span class="file-text">Choose DESeq2 Output File</span>
+                        <input type="file" id="fileInput" accept=".csv,.tsv,.txt" />
+                    </label>
+                    <div id="fileName" class="file-name"></div>
+                </div>
+
+                <div class="thresholds-section">
+                    <div class="threshold-group">
+                        <label for="padjCutoff">P-adj Cutoff:</label>
+                        <input type="number" id="padjCutoff" min="0" max="1" step="0.001" value="0.05" />
+                        <span class="range-label">(0 - 1)</span>
+                    </div>
+
+                    <div class="threshold-group">
+                        <label for="log2FCCutoff">Log2FC Cutoff:</label>
+                        <input type="number" id="log2FCCutoff" min="0" step="0.1" value="1" />
+                        <span class="range-label" id="log2FCRange">(0 - max)</span>
+                    </div>
+
+                    <button id="updatePlot" class="btn btn-primary">Update Plot</button>
+                </div>
+
+                <div class="export-section">
+                    <button id="exportPDF" class="btn btn-export" disabled>Export as PDF</button>
+                </div>
+            </div>
+
+            <div class="plot-section">
+                <div id="volcanoPlot" class="plot-container"></div>
+                <div id="plotInfo" class="plot-info"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

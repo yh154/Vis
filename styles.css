@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: #333;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    padding: 30px;
+}
+
+.controls-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.upload-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 2px dashed #dee2e6;
+    transition: all 0.3s ease;
+}
+
+.upload-section:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+}
+
+.file-icon {
+    font-size: 3em;
+}
+
+.file-text {
+    font-weight: 600;
+    color: #667eea;
+}
+
+.file-label input[type="file"] {
+    display: none;
+}
+
+.file-name {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #6c757d;
+    text-align: center;
+    word-break: break-all;
+}
+
+.thresholds-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.threshold-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.threshold-group label {
+    font-weight: 600;
+    color: #495057;
+    font-size: 0.95em;
+}
+
+.threshold-group input {
+    padding: 10px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.threshold-group input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.range-label {
+    font-size: 0.85em;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-export {
+    background: #28a745;
+    color: white;
+}
+
+.btn-export:hover:not(:disabled) {
+    background: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+}
+
+.btn-export:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.export-section {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.plot-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.plot-container {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    min-height: 600px;
+}
+
+.plot-info {
+    background: #f8f9fa;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 0.9em;
+    color: #495057;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
